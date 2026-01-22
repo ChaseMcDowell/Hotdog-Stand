@@ -13,7 +13,7 @@ def shop():
     global buns
     global ketchup
 
-    shopChoice = int(input("Purchase: \n 1) meat $1 \n 2) buns $.50 \n 3) ketchup $.25 \n 4) Exit shop"))
+    shopChoice = int(input("Purchase: \n 1) meat $1 \n 2) buns $.50 \n 3) ketchup $.25 \n 4) Exit shop \n"))
     shopAmount = int(input("How many would you like to buy? "))
     #if they chose meat
     if shopChoice == 1:
