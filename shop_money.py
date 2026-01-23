@@ -50,3 +50,5 @@ def shop():
         else:#if invalid input
             print("Please enter a valid input. ")
 
+
+# money system don't run the file!!
