@@ -1,7 +1,5 @@
 import shop_money
 
-global dailyEarnings
-
 def startDay():
     global dailyEarnings
     dailyEarnings = 60

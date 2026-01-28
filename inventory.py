@@ -6,4 +6,4 @@ def inventory():#function for inventory
     print("Meat: " + str(shop_money.meat))
     print("Buns: " + str(shop_money.buns))
     print("Ketchup: " + str(shop_money.ketchup))
-        
+    print("Mustard: " + str(shop_money.mustard))    
