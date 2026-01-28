@@ -1,11 +1,7 @@
 import startday
-global money
 money = 100
-global meat
 meat = 0
-global buns
 buns = 0
-global ketchup
 ketchup = 0
 
 def shop():
@@ -52,3 +48,4 @@ def shop():
 
 
 # money system don't run the file!!
+
