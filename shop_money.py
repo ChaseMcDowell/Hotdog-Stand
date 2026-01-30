@@ -4,6 +4,11 @@ meat = 0
 buns = 0
 ketchup = 0
 mustard = 0
+inventory = {"Money" : money,
+             "Meat" : meat,
+             "Buns" : buns,
+             "Ketchup" : ketchup,
+             "Mustard" : mustard}
 
 def shop():
     #making global variables
@@ -12,7 +17,8 @@ def shop():
     global buns
     global ketchup
     global mustard
-    
+    global inventory
+
     while True:#infinite loop so you can purchase many things
         print("Money: " + str(money))
         shopChoice = input("Purchase: \n 1) meat $1 \n 2) buns $.50 \n 3) ketchup $.25 \n 4) mustard $.25 \n 5) Exit shop \n")
@@ -20,7 +26,7 @@ def shop():
             break
         #if they chose meat
         if shopChoice == "1":#purchas meat
-            shopAmount = input("How many would you like to buy? ")
+            shopAmount = int(input("How many would you like to buy? "))
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 break

@@ -9,7 +9,7 @@ def startMenu():#function for start menu
         if gameChoice == "1":
             startday.startDay()
         elif gameChoice == "2":
-            inventory.inventory()
+            inventory.inventoryFunc(shop_money.inventory)
         elif gameChoice == "3":
             shop_money.shop()
         elif gameChoice == "4":
