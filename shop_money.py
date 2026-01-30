@@ -26,10 +26,14 @@ def shop():
             break
         #if they chose meat
         if shopChoice == "1":#purchas meat
-            shopAmount = int(input("How many would you like to buy? "))
+            shopAmount = input("How many would you like to buy? ")
+            try:
+                shopAmount = int(shopAmount)
+            except ValueError:
+                continue
             if shopAmount <= 0:
                 print("Please enter a valid input!")
-                break
+                continue
             money -= int(shopAmount)
             if money < 0:
                 money += int(shopAmount)
@@ -39,9 +43,13 @@ def shop():
         #if they choose buns
         elif shopChoice == "2":
             shopAmount = input("How many would you like to buy? ")
+            try:
+                shopAmount = int(shopAmount)
+            except ValueError:
+                continue
             if shopAmount <= 0:
                 print("Please enter a valid input!")
-                break
+                continue
             money -= 0.5*int(shopAmount)
             if money < 0:
                 money += 0.5*int(shopAmount)
@@ -51,9 +59,13 @@ def shop():
         #if they choose ketchup
         elif shopChoice == "3":
             shopAmount = input("How many would you like to buy? ")
+            try:
+                shopAmount = int(shopAmount)
+            except ValueError:
+                continue
             if shopAmount <= 0:
                 print("Please enter a valid input!")
-                break
+                continue
             money -= 0.25*int(shopAmount)
             if money < 0:
                 money += 0.25*int(shopAmount)
@@ -63,9 +75,13 @@ def shop():
         #if they choose mustard
         elif shopChoice == "4":
             shopAmount = input("How many would you like to buy? ")
+            try:
+                shopAmount = int(shopAmount)
+            except ValueError:
+                continue 
             if shopAmount <= 0:
                 print("Please enter a valid input!")
-                break
+                continue
             money -= 0.25*int(shopAmount)
             if money < 0:
                 money += 0.25*int(shopAmount)
