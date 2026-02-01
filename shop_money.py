@@ -4,11 +4,6 @@ meat = 0
 buns = 0
 ketchup = 0
 mustard = 0
-inventory = {"Money" : money,
-             "Meat" : meat,
-             "Buns" : buns,
-             "Ketchup" : ketchup,
-             "Mustard" : mustard}
 
 def shop():
     #making global variables
@@ -17,7 +12,6 @@ def shop():
     global buns
     global ketchup
     global mustard
-    global inventory
 
     while True:#infinite loop so you can purchase many things
         print("Money: " + str(money))
@@ -30,6 +24,7 @@ def shop():
             try:
                 shopAmount = int(shopAmount)
             except ValueError:
+                print("Please enter a valid input!")
                 continue
             if shopAmount <= 0:
                 print("Please enter a valid input!")
@@ -46,6 +41,7 @@ def shop():
             try:
                 shopAmount = int(shopAmount)
             except ValueError:
+                print("Please enter a valid input!")
                 continue
             if shopAmount <= 0:
                 print("Please enter a valid input!")
@@ -62,6 +58,7 @@ def shop():
             try:
                 shopAmount = int(shopAmount)
             except ValueError:
+                print("Please enter a valid input!")
                 continue
             if shopAmount <= 0:
                 print("Please enter a valid input!")
@@ -78,6 +75,7 @@ def shop():
             try:
                 shopAmount = int(shopAmount)
             except ValueError:
+                print("Please enter a valid input!")
                 continue 
             if shopAmount <= 0:
                 print("Please enter a valid input!")
@@ -93,4 +91,3 @@ def shop():
 
 
 # money system don't run the file!!
-
