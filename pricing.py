@@ -11,6 +11,7 @@ def price(ingredients,inventory):
                    "numofketchup" :inventory["ketchup"] / ingredients["ketchup"],
                    "numofmustard" : inventory["mustard"] / ingredients["mustard"]}
         numOfMake = min(produce.values())
+        print(numOfMake)
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {pricePer}")
         print(f"Total profit per hotdog: {pricePer-costPer}")

@@ -20,9 +20,8 @@ def shop():
             break
         #if they chose meat
         if shopChoice == "1":#purchas meat
-            shopAmount = input("How many would you like to buy? ")
             try:
-                shopAmount = int(shopAmount)
+                shopAmount = int(input("How many would you like to buy? "))
             except ValueError:
                 print("Please enter a valid input!")
                 continue
@@ -37,9 +36,8 @@ def shop():
                 meat += int(shopAmount)
         #if they choose buns
         elif shopChoice == "2":
-            shopAmount = input("How many would you like to buy? ")
             try:
-                shopAmount = int(shopAmount)
+                shopAmount = int(input("How many would you like to buy? "))
             except ValueError:
                 print("Please enter a valid input!")
                 continue
@@ -54,9 +52,8 @@ def shop():
                 buns += int(shopAmount)
         #if they choose ketchup
         elif shopChoice == "3":
-            shopAmount = input("How many would you like to buy? ")
             try:
-                shopAmount = int(shopAmount)
+                shopAmount = int(input("How many would you like to buy? "))
             except ValueError:
                 print("Please enter a valid input!")
                 continue
@@ -71,9 +68,8 @@ def shop():
                 ketchup += int(shopAmount)
         #if they choose mustard
         elif shopChoice == "4":
-            shopAmount = input("How many would you like to buy? ")
             try:
-                shopAmount = int(shopAmount)
+                shopAmount = int(input("How many would you like to buy? "))
             except ValueError:
                 print("Please enter a valid input!")
                 continue 
