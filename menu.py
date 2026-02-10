@@ -1,5 +1,5 @@
 #game start menu
-import shop_money#imports files so it can run the functions
+import shop_money
 import inventory
 import startday
 import recipes

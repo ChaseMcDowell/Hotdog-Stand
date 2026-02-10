@@ -1,4 +1,4 @@
-import startday
+
 money = 100
 meat = 0
 buns = 0
