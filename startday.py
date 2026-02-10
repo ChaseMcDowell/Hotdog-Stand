@@ -1,4 +1,4 @@
-from shop_money import money
+import shop_money
 from customer_class import Customer
 import recipes
 import pricing
