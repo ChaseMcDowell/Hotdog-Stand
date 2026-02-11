@@ -15,10 +15,21 @@ def startDay(customers):
     for i in range(random.randint(20,75)):
         customerInLine = random.choice(customers)
         if recipes.ingredients["ketchup"] > customerInLine["ketchup"]:
-            print("You were using too much ketchup this is nasty.")
+            print("Can I have some hotdog with my ketchup.")
         elif recipes.ingredients["ketchup"] < customerInLine["ketchup"]:
-            print("Not enough ketchup for me.")
-    
+            print("This is dry give me some ketchup.")
+        elif recipes.ingredients["meat"] > customerInLine["meat"]:
+            print("I ate half of it. TOO MUCH MEAT!")
+        elif recipes.ingredients["meat"] < customerInLine["meat"]:
+            print("Where's the beef?")
+        elif recipes.ingredients["mustard"] > customerInLine["mustard"]:
+            print("This is too much mustard. You made me throw up.")
+        elif recipes.ingredients["mustard"] < customerInLine["mustard"]:
+            print("Where is the mustard I asked for.")
+        elif recipes.ingredients["price"] > customerInLine["price"]:
+            print("This is too expensive! Who do you think I am? Elon Musk!")
+        else:
+            numOfBuy += 1
     
     
     

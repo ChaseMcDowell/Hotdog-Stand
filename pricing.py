@@ -23,7 +23,7 @@ def price(ingredients,inventory):
         print(f"Price per hotdog: {pricePer}")
         print(f"Total profit per hotdog: {pricePer-costPer}")
         print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${numOfMake * pricePer}")
-        priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu")
+        priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu \n")
         if priceChoice == "1":
             pricePer = input("How much would you like to charge per hotdog?: ")
             try:

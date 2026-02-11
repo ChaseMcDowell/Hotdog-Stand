@@ -9,7 +9,7 @@ def startMenu():#function for start menu
     while True:#logic for which they select
         gameChoice = input("What would you like to do?: \n 1.) Start Day \n 2.) Inventory \n 3.) Shop \n 4.) Recipes \n 5.) Pricing \n")
         if gameChoice == "1":
-            startday.startDay()
+            startday.startDay(startday.customers)
         elif gameChoice == "2":
             inventory.inventoryFunc(inventory.inventory)
         elif gameChoice == "3":
