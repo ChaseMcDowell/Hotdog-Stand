@@ -7,11 +7,12 @@ import random
 
 buy_noBuy = None
 numOfBuy = 0
-customers = []
+customers_list = []
 
-def startDay(customers):
+def startDay(customers_list):
     for customers in range(10):
-        customers.append(Customer())
+        customers = Customer()
+        customers_list.append(Customer())
     for i in range(random.randint(20,75)):
         customerInLine = random.choice(customers)
         if recipes.ingredients["ketchup"] > customerInLine["ketchup"]:
@@ -30,16 +31,5 @@ def startDay(customers):
             print("This is too expensive! Who do you think I am? Elon Musk!")
         else:
             numOfBuy += 1
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    #this is the end
-    #math1 = int(pricing.pricePer)*numOfBuy
-    #print(f"Profit: {math1}")
+    math1 = int(pricing.pricePer)*numOfBuy
+    print(f"Profit: {math1}")
