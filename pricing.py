@@ -5,7 +5,7 @@ pricePer = 3
 def price(ingredients,inventory):
     while True:
         global pricePer
-        costPer = ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25
+        costPer = int(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         produce = inventory
         numOfMake = 0
         

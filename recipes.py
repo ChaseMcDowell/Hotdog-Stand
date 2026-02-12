@@ -6,19 +6,25 @@ ingredients = {"meat":1,
 def recipe(ingredients):
     while True:
         ingredient_choice = input("Recipe options: \n 1) meat \n 2) ketchup \n 3) mustard \n 4) Exit recipes \n")
+        if ingredients["meat"] == 3:
+            qual = "wagyu"
+        if ingredients["meat"] == 2:
+            qual = "prime"
+        if ingredients["meat"] == 1:
+            qual = "choice"
         if ingredient_choice == "4":
-            print("The quality of meat you are using per hotdog is ",ingredients["meat"])
-            print("The amount of ketchup you are using per hotdog is ",ingredients["ketchup"])
-            print("The amount of mustard you are using per hotdog is ",ingredients["mustard"])
+            print("The quality of meat you are using per hotdog is ", qual + ". This will use 3 meat per hotdog.")
+            print("The amount of ketchup you are using per hotdog is ",ingredients["ketchup"] + ". This will use 2 meat per hotdog.")
+            print("The amount of mustard you are using per hotdog is ",ingredients["mustard"] + ". This will use 1 meat per hotdog.")
             break
         elif ingredient_choice == "1":
-            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Waygu \n 2) Prime \n 3) Choice \n ")
+            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality) \n 2) Prime (Middle quality) \n 3) Choice (Lowest quality) \n ")
             if recipe_choice == "1":
-                ingredients["meat"] = "Waygu"
+                ingredients["meat"] = 3
             elif recipe_choice == "2":
-                ingredients["meat"] = "Prime"
+                ingredients["meat"] = 2
             elif recipe_choice == "3":
-                ingredients["meat"] = "Choice"
+                ingredients["meat"] = 1
             else:
                 print("Please enter valid input.")
                 continue
@@ -47,5 +53,3 @@ def recipe(ingredients):
         else:
             print("Please enter a valid input. ")
             continue
-
-

@@ -11,7 +11,7 @@ class Customer:
     def __init__(self, condiments_preference=None, meat_preference=None, price_point=None):
         self.condiments_preference = (
             condiments_preference if condiments_preference is not None
-            else random.randint(1, 3)
+            else random.randint(1, 6)
         )
         self.meat_preference = (
             meat_preference if meat_preference is not None
