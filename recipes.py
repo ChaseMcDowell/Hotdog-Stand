@@ -7,18 +7,18 @@ def recipe(ingredients):
     while True:
         ingredient_choice = input("Recipe options: \n 1) meat \n 2) ketchup \n 3) mustard \n 4) Exit recipes \n")
         if ingredient_choice == "4":
-            print("The amount of meat you are using per hotdog is ",ingredients["meat"])
+            print("The quality of meat you are using per hotdog is ",ingredients["meat"])
             print("The amount of ketchup you are using per hotdog is ",ingredients["ketchup"])
             print("The amount of mustard you are using per hotdog is ",ingredients["mustard"])
             break
         elif ingredient_choice == "1":
-            recipe_choice = input("How much meat would you like to use. (1,2,3) ")
+            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Waygu \n 2) Prime \n 3) Choice \n ")
             if recipe_choice == "1":
-                ingredients["meat"] = 1
+                ingredients["meat"] = "Waygu"
             elif recipe_choice == "2":
-                ingredients["meat"] = 2
+                ingredients["meat"] = "Prime"
             elif recipe_choice == "3":
-                ingredients["meat"] = 3
+                ingredients["meat"] = "Choice"
             else:
                 print("Please enter valid input.")
                 continue

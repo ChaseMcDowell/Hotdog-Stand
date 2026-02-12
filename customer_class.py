@@ -8,9 +8,9 @@
 import random
 
 class Customer:
-    def __init__(self, ketchup_preference=None, meat_preference=None, mustard_preference = None, price_point=None):
-        self.ketchup_preference = (
-            ketchup_preference if ketchup_preference is not None
+    def __init__(self, condiments_preference=None, meat_preference=None, price_point=None):
+        self.condiments_preference = (
+            condiments_preference if condiments_preference is not None
             else random.randint(1, 3)
         )
         self.meat_preference = (
@@ -21,14 +21,10 @@ class Customer:
             price_point if price_point is not None
             else round(random.uniform(3.0, 4.0),2)
         )
-        self.mustard_preference = (
-            meat_preference if meat_preference is not None
-            else random.randint(1, 3)
-        )
+
     def get_customer_attributes(self):
         return {
-            "ketchup": self.ketchup_preference,
+            "condiments": self.condiments_preference,
             "meat": self.meat_preference,
-            "mustard":self.mustard_preference,
             "price": self.price_point
         }
