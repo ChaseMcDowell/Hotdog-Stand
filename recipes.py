@@ -12,10 +12,16 @@ def recipe(ingredients):
             qual = "prime"
         if ingredients["meat"] == 1:
             qual = "choice"
+        if qual == "choice":
+            meat_use = 1
+        if qual == "wagyu":
+            meat_use = 3
+        if qual == "prime":
+            meat_use = 2
         if ingredient_choice == "4":
-            print("The quality of meat you are using per hotdog is ", qual + ". This will use 3 meat per hotdog.")
-            print("The amount of ketchup you are using per hotdog is ",ingredients["ketchup"] + ". This will use 2 meat per hotdog.")
-            print("The amount of mustard you are using per hotdog is ",ingredients["mustard"] + ". This will use 1 meat per hotdog.")
+            print("The quality of meat you are using per hotdog is", qual + ". This will use ",meat_use," meat per hotdog.")
+            print("The amount of ketchup you are using per hotdog is ",str(ingredients["ketchup"]) + ". This will use 2 meat per hotdog.")
+            print("The amount of mustard you are using per hotdog is ",str(ingredients["mustard"]) + ". This will use 1 meat per hotdog.")
             break
         elif ingredient_choice == "1":
             recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality) \n 2) Prime (Middle quality) \n 3) Choice (Lowest quality) \n ")

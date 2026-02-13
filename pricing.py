@@ -1,11 +1,12 @@
 import recipes
 import inventory
+pricePer = float
 pricePer = 3
 
 def price(ingredients,inventory):
     while True:
         global pricePer
-        costPer = int(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
+        costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         produce = inventory
         numOfMake = 0
         
@@ -21,7 +22,7 @@ def price(ingredients,inventory):
         print(numOfMake)
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {pricePer}")
-        print(f"Total profit per hotdog: {pricePer-costPer}")
+        print(f"Total profit per hotdog: {float(pricePer)-costPer}")
         print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${numOfMake * pricePer}")
         priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu \n")
         if priceChoice == "1":

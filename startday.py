@@ -8,26 +8,34 @@ import random
 
 numOfBuy = 0
 customers_list = []
-preferences = {}
 
 def startDay(customers_list):
+    too_condiment_feedback = 0
+    less_condiment_feedback =0
+    dense_meat_feedback = 0
+    bad_meat_feedback = 0
+    price_feedback = 0
     global numOfBuy
-    for _ in range(10):
-        customer = Customer()
-        customers_list.append(customer.get_customer_attributes())
-    for i in range(random.randint(20,75)):
-        customerInLine = random.choice(customers_list)
-        if recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] > customerInLine["condiments"]:
-            print("Can I have some hotdog with my sauce. \n")
-        elif recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] < customerInLine["condiments"]:
-            print("This is dry give me some condiments. \n")
-        elif recipes.ingredients["meat"] > customerInLine["meat"]:
-            print("The meat is to fat. Give me less quality of Meat. \n")
-        elif recipes.ingredients["meat"] < customerInLine["meat"]:
-            print("Why is it green? Give me better meat. \n")
-        elif pricing.pricePer > customerInLine["price"]:
-            print("This is too expensive! Who do you think I am? Elon Musk!")
-        else:
-            numOfBuy += 1
-    math1 = int(pricing.pricePer)*numOfBuy
-    print(f"Profit: {math1}")
+    while inventory.inventory["meat"] > 0 and inventory.inventory["ketchup"] > 0 and inventory.inventory["mustard"] > 0:
+        if inventory.inventory["meat"] == 0 and inventory.inventory["ketchup"] == 0 and inventory.inventory["mustard"] == 0:
+            break
+        for _ in range(10):
+            customer = Customer()
+            customers_list.append(customer.get_customer_attributes())
+        for i in range(random.randint(20,75)):
+            customerInLine = random.choice(customers_list)
+            if recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] - 1 > customerInLine["condiments"]:
+                too_condiment_feedback += 1
+            elif recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] + 1 < customerInLine["condiments"]:
+                less_condiment_feedback += 1
+            elif recipes.ingredients["meat"] - 1 > customerInLine["meat"]:
+                dense_meat_feedback += 1
+            elif recipes.ingredients["meat"] + 1 < customerInLine["meat"]:
+                bad_meat_feedback += 1
+            elif pricing.pricePer > customerInLine["price"]:
+                price_feedback +=1
+            else:
+                numOfBuy += 1
+        math1 = int(pricing.pricePer)*numOfBuy
+        print(f"Profit: {math1}")
+        print(f"The number of customers that you had was {i}")
