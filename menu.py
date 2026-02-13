@@ -11,12 +11,12 @@ def startMenu():#function for start menu
         if gameChoice == "1":
             startday.startDay(startday.customers_list)
         elif gameChoice == "2":
-            inventory.inventoryFunc(inventory.inventory)
+            inventory.inventoryFunc()
         elif gameChoice == "3":
             shop_money.shop()
         elif gameChoice == "4":
             recipes.recipe(recipes.ingredients)
         elif gameChoice == "5":
-            pricing.price(recipes.ingredients,inventory.inventory)
+            pricing.price(recipes.ingredients)
         else:
             print("Please enter valid input!")

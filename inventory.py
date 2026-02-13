@@ -1,19 +1,19 @@
 import shop_money
-inventory = {"money" : shop_money.money,
+inventoryVar = {"money" : shop_money.money,
              "meat" : shop_money.meat,
              "buns" : shop_money.buns,
              "ketchup" : shop_money.ketchup,
              "mustard" : shop_money.mustard}
 
-def inventoryFunc(inventory):#function for inventory
-    inventory = {"money" : shop_money.money,
+def inventoryFunc():#function for inventory
+    inventoryVar = {"money" : shop_money.money,
              "meat" : shop_money.meat,
              "buns" : shop_money.buns,
              "ketchup" : shop_money.ketchup,
              "mustard" : shop_money.mustard}
     print("Inventory:")
-    print("Money: $" + str(inventory["money"]))
-    print("Meat: " + str(inventory["meat"]))
-    print("Buns: " + str(inventory["buns"]))
-    print("Ketchup: " + str(inventory["ketchup"]))
-    print("Mustard: " + str(inventory["mustard"]))
+    print("Money: $" + str(inventoryVar["money"]))
+    print("Meat: " + str(inventoryVar["meat"]))
+    print("Buns: " + str(inventoryVar["buns"]))
+    print("Ketchup: " + str(inventoryVar["ketchup"]))
+    print("Mustard: " + str(inventoryVar["mustard"]))
