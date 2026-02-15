@@ -14,7 +14,7 @@ def price(ingredients):
         global pricePer
         costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         numOfMake = 0
-        for i in range(produce["buns"]):
+        for numOfMake in range(produce["buns"]):
                 produce["meat"] -= ingredients["meat"]
                 produce["ketchup"] -= ingredients["ketchup"]
                 produce["mustard"] -= ingredients["mustard"]
@@ -23,16 +23,17 @@ def price(ingredients):
                     numOfMake += 1
                 else:
                     break
+        grossProfit = numOfMake * pricePer
+        netProfit = grossProfit - costPer
         print(numOfMake)
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {pricePer}")
         print(f"Total profit per hotdog: {float(pricePer)-costPer}")
-        print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${numOfMake * pricePer}")
+        print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${netProfit}")
         priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu \n")
         if priceChoice == "1":
-            pricePer = input("How much would you like to charge per hotdog?: ")
             try:
-                pricePer = int(pricePer)
+                pricePer = input("How much would you like to charge per hotdog?: ")
             except ValueError:
                 print("Please enter a valid input!")
                 continue
