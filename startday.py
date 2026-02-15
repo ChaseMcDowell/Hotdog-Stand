@@ -38,10 +38,10 @@ def startDay(customers_list):
                 price_feedback +=1
             else:
                 numOfBuy += 1
+        inventory.inventoryVar["money"] += profit
         profit = float(pricing.pricePer)*numOfBuy
         print(f"Profit: {profit}")
         print(f"The number of customers that you had was {i}")
         print(f"{too_condiment_feedback} people said you had too many condiments")
         print(f"{less_condiment_feedback} people said you had too many condiments")
         print(f"{dense_meat_feedback} people said you had too dense/high quality ")
-    shop_money.money += profit
