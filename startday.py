@@ -45,3 +45,5 @@ def startDay(customers_list):
         print(f"{too_condiment_feedback} people said you had too many condiments")
         print(f"{less_condiment_feedback} people said you had too many condiments")
         print(f"{dense_meat_feedback} people said you had too dense/high quality ")
+    else:
+        print("You do not have the resources to open your stand.")

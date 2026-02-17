@@ -25,7 +25,7 @@ def price(ingredients):
                     break
         grossProfit = numOfMake * pricePer
         netProfit = grossProfit - costPer
-        print(numOfMake)
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {pricePer}")
         print(f"Total profit per hotdog: {float(pricePer)-costPer}")

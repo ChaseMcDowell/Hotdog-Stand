@@ -11,6 +11,7 @@ def inventoryFunc():#function for inventory
              "buns" : shop_money.buns,
              "ketchup" : shop_money.ketchup,
              "mustard" : shop_money.mustard}
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("Inventory:")
     print("Money: $" + str(inventoryVar["money"]))
     print("Meat: " + str(inventoryVar["meat"]))
