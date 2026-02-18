@@ -5,16 +5,21 @@ pricePer = float
 pricePer = 3
 
 def price(ingredients):
+    global pricePer
     global inventory
     produce = {"meat" : shop_money.meat,
              "buns" : shop_money.buns,
              "ketchup" : shop_money.ketchup,
              "mustard" : shop_money.mustard}
     while True:
+        produce = {"meat" : shop_money.meat,
+             "buns" : shop_money.buns,
+             "ketchup" : shop_money.ketchup,
+             "mustard" : shop_money.mustard}
         global pricePer
         costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         numOfMake = 0
-        for numOfMake in range(produce["buns"]):
+        for numOfMake in range(produce["buns"] + 1):
                 produce["meat"] -= ingredients["meat"]
                 produce["ketchup"] -= ingredients["ketchup"]
                 produce["mustard"] -= ingredients["mustard"]
@@ -23,21 +28,21 @@ def price(ingredients):
                     numOfMake += 1
                 else:
                     break
-        grossProfit = numOfMake * pricePer
-        netProfit = grossProfit - costPer
+        profitPer = float(pricePer-costPer)
+        netProfit = numOfMake * profitPer
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {pricePer}")
-        print(f"Total profit per hotdog: {float(pricePer)-costPer}")
+        print(f"Total profit per hotdog: {profitPer}")
         print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${netProfit}")
         priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu \n")
         if priceChoice == "1":
             try:
-                pricePer = input("How much would you like to charge per hotdog?: ")
+                pricePer = float(input("How much would you like to charge per hotdog?: "))
             except ValueError:
                 print("Please enter a valid input!")
                 continue
-            if pricePer <=0:
+            if pricePer <= 0:
                 print("Please enter a valid input!")
         elif priceChoice == "2":
             break

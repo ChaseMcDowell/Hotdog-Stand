@@ -4,7 +4,6 @@ import inventory
 import startday
 import recipes
 import pricing
-import backstory
 
 def startMenu():#function for start menu
     while True:#logic for which they select
