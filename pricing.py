@@ -1,25 +1,25 @@
 import recipes
-import inventory
+from inventory import inventoryVar
 import shop_money
 pricePer = float
 pricePer = 3
 
 def price(ingredients):
     global pricePer
-    global inventory
-    produce = {"meat" : shop_money.meat,
+    global produce
+    while True:
+        produce = {"meat" : shop_money.meat,
              "buns" : shop_money.buns,
              "ketchup" : shop_money.ketchup,
              "mustard" : shop_money.mustard}
-    while True:
-        produce = {"meat" : shop_money.meat,
+        loop_produce_use = {"meat" : shop_money.meat,
              "buns" : shop_money.buns,
              "ketchup" : shop_money.ketchup,
              "mustard" : shop_money.mustard}
         global pricePer
         costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         numOfMake = 0
-        for numOfMake in range(produce["buns"] + 1):
+        for numOfMake in range(loop_produce_use["buns"] + 1):
                 produce["meat"] -= ingredients["meat"]
                 produce["ketchup"] -= ingredients["ketchup"]
                 produce["mustard"] -= ingredients["mustard"]
