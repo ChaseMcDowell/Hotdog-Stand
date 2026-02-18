@@ -5,6 +5,7 @@ ingredients = {"meat":1,
 
 def recipe(ingredients):
     while True:
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         ingredient_choice = input("Recipe options: \n 1) meat \n 2) ketchup \n 3) mustard \n 4) Exit recipes \n")
         if ingredients["meat"] == 3:
             qual = "wagyu"
@@ -19,9 +20,10 @@ def recipe(ingredients):
         if qual == "prime":
             meat_use = 2
         if ingredient_choice == "4":
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("The quality of meat you are using per hotdog is", qual + ". This will use ",meat_use," meat per hotdog.")
-            print("The amount of ketchup you are using per hotdog is ",str(ingredients["ketchup"]) + ". This will use 2 meat per hotdog.")
-            print("The amount of mustard you are using per hotdog is ",str(ingredients["mustard"]) + ". This will use 1 meat per hotdog.")
+            print("The amount of ketchup you are using per hotdog is ",str(ingredients["ketchup"]))
+            print("The amount of mustard you are using per hotdog is ",str(ingredients["mustard"]))
             break
         elif ingredient_choice == "1":
             recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality) \n 2) Prime (Middle quality) \n 3) Choice (Lowest quality) \n ")
@@ -32,6 +34,7 @@ def recipe(ingredients):
             elif recipe_choice == "3":
                 ingredients["meat"] = 1
             else:
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")
                 continue
         elif ingredient_choice == "2":
@@ -43,6 +46,7 @@ def recipe(ingredients):
             elif recipe_choice == "3":
                 ingredients["ketchup"] = 3
             else:
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")
                 continue
         elif ingredient_choice == "3":
@@ -54,8 +58,10 @@ def recipe(ingredients):
             elif recipe_choice == "3":
                 ingredients["mustard"] = 3
             else:
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")
                 continue
         else:
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("Please enter a valid input. ")
             continue
