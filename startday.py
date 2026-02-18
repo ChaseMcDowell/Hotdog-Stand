@@ -18,9 +18,10 @@ def startDay(customers_list):
     bad_meat_feedback = 0
     price_feedback = 0
     global numOfBuy
-    while inventory.inventoryVar["meat"] > 0 and inventory.inventoryVar["ketchup"] > 0 and inventory.inventoryVar["mustard"] > 0:
-        if inventory.inventoryVar["meat"] == 0 and inventory.inventoryVar["ketchup"] == 0 and inventory.inventoryVar["mustard"] == 0:
-            break
+    while inventory.inventoryVar["money"] > 0:
+        if inventory.inventoryVar["meat"] < recipes.ingredients["meat"] or inventory.inventoryVar["ketchup"] < recipes.ingredients["ketchup"] and inventory.inventoryVar["mustard"] < recipes.ingredients["mustard"] or inventory.inventoryVar["buns"] < 1 or inventory.inventoryVar["money"] == 0:
+            print("You Lose!")
+            winlose = False    
         for _ in range(10):
             customer = Customer()
             customers_list.append(customer.get_customer_attributes())
@@ -38,12 +39,11 @@ def startDay(customers_list):
                 price_feedback +=1
             else:
                 numOfBuy += 1
-        inventory.inventoryVar["money"] += profit
         profit = float(pricing.pricePer)*numOfBuy
+        inventory.inventoryVar["money"] += profit
         print(f"Profit: {profit}")
         print(f"The number of customers that you had was {i}")
         print(f"{too_condiment_feedback} people said you had too many condiments")
         print(f"{less_condiment_feedback} people said you had too many condiments")
         print(f"{dense_meat_feedback} people said you had too dense/high quality ")
-    else:
-        print("You do not have the resources to open your stand.")
+        break
