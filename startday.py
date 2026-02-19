@@ -19,7 +19,7 @@ def startDay(customers_list):
     price_feedback = 0
     global numOfBuy
     while inventory.inventoryVar["money"] > 0:
-        if inventory.inventoryVar["meat"] < recipes.ingredients["meat"] or inventory.inventoryVar["ketchup"] < recipes.ingredients["ketchup"] and inventory.inventoryVar["mustard"] < recipes.ingredients["mustard"] or inventory.inventoryVar["buns"] < 1 or inventory.inventoryVar["money"] == 0:
+        if inventory.inventoryVar["meat"] < recipes.ingredients["meat"] or inventory.inventoryVar["ketchup"] < recipes.ingredients["ketchup"] and inventory.inventoryVar["mustard"] < recipes.ingredients["mustard"] and inventory.inventoryVar["buns"] < 1 and inventory.inventoryVar["money"] == 0:
             print("You Lose!")
             winlose = False    
         for _ in range(10):
