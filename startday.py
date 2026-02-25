@@ -36,6 +36,6 @@ def startDay(customers_list):
                 price_feedback +=1
             else:
                 numOfBuy += 1
-        math1 = int(pricing.pricePer)*numOfBuy
-        print(f"Profit: {math1}")
-        print(f"The number of customers that you had was {i}")
+    profit = int(pricing.pricePer)*numOfBuy
+    print(f"Profit: {profit}")
+    print(f"The number of customers that you had was {i}")
