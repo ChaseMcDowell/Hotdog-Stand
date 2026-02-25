@@ -1,38 +1,48 @@
 import recipes
-import inventory
+from inventory import inventoryVar
+import shop_money
 pricePer = float
 pricePer = 3
 
-def price(ingredients,inventory):
+def price(ingredients):
+    global pricePer
+    global produce
     while True:
+        produce = {"meat" : shop_money.meat,
+             "buns" : shop_money.buns,
+             "ketchup" : shop_money.ketchup,
+             "mustard" : shop_money.mustard}
+        loop_produce_use = {"meat" : shop_money.meat,
+             "buns" : shop_money.buns,
+             "ketchup" : shop_money.ketchup,
+             "mustard" : shop_money.mustard}
         global pricePer
         costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
-        produce = inventory
         numOfMake = 0
-        
-        for i in range(produce["buns"]):
-            produce["meat"] -= 1
-            produce["ketchup"] -= 1
-            produce["mustard"] -= 1
-            if produce["meat"] < 1 or produce["ketchup"] < 1 or produce["mustard"] < 1:
-                break
-            else:
-                numOfMake += 1
-
-        print(numOfMake)
+        for numOfMake in range(loop_produce_use["buns"] + 1):
+                produce["meat"] -= ingredients["meat"]
+                produce["ketchup"] -= ingredients["ketchup"]
+                produce["mustard"] -= ingredients["mustard"]
+                produce["buns"] -= 1
+                if produce["buns"] >= 0 and produce["ketchup"] >= 0 and produce["meat"] >= 0 and produce["mustard"]:
+                    numOfMake += 1
+                else:
+                    break
+        profitPer = float(pricePer-costPer)
+        netProfit = numOfMake * profitPer
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {pricePer}")
-        print(f"Total profit per hotdog: {float(pricePer)-costPer}")
-        print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${numOfMake * pricePer}")
+        print(f"Total profit per hotdog: {profitPer}")
+        print(f"With your current recipe and inventory, you can produce {numOfMake} hotdog(s) to profit ${netProfit}")
         priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu \n")
         if priceChoice == "1":
-            pricePer = input("How much would you like to charge per hotdog?: ")
             try:
-                pricePer = int(pricePer)
+                pricePer = float(input("How much would you like to charge per hotdog?: "))
             except ValueError:
                 print("Please enter a valid input!")
                 continue
-            if pricePer <=0:
+            if pricePer <= 0:
                 print("Please enter a valid input!")
         elif priceChoice == "2":
             break
