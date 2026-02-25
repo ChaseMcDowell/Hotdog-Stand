@@ -9,8 +9,9 @@ import random
 numOfBuy = 0
 customers_list = []
 
-def startDay(customers_list):
-    global inventory
+def startDay():
+    soldOut = None
+    global customers_list
     global profit
     too_condiment_feedback = 0
     less_condiment_feedback =0
@@ -22,10 +23,12 @@ def startDay(customers_list):
             customer = Customer()
             customers_list.append(customer.get_customer_attributes())
     while True:
+        numOfCustomers = 0
         for i in range(random.randint(20,75)):
-            if inventory.inventoryVar["meat"] < recipes.ingredients["meat"] or inventory.inventoryVar["mustard"] < recipes.ingredients["mustard"] or inventory.inventoryVar["ketchup"] < recipes.ingredients["ketchup"] or inventory.inventoryVar["buns"] < 1:
+            if shop_money.meat < recipes.ingredients["meat"] or shop_money.mustard < recipes.ingredients["mustard"] or shop_money.ketchup < recipes.ingredients["ketchup"] or shop_money.buns < 1:
                 soldOut = True
                 break
+            
             customerInLine = random.choice(customers_list)
             if recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] - 1 > customerInLine["condiments"]:
                 too_condiment_feedback += 1
