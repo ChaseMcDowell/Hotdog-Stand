@@ -23,29 +23,28 @@ def startDay():
             customer = Customer()
             customers_list.append(customer.get_customer_attributes())
     while True:
-        numOfCustomers = 0
         for i in range(random.randint(20,75)):
-            if shop_money.meat < recipes.ingredients["meat"] or shop_money.mustard < recipes.ingredients["mustard"] or shop_money.ketchup < recipes.ingredients["ketchup"] or shop_money.buns < 1:
+            if inventory.inventoryVar["meat"] < recipes.ingredients["meat"] or inventory.inventoryVar["mustard"] < recipes.ingredients["mustard"] or inventory.inventoryVar["ketchup"] < recipes.ingredients["ketchup"] or inventory.inventoryVar["buns"] < 1:
                 soldOut = True
                 break
-            
             customerInLine = random.choice(customers_list)
-            if recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] - 1 > customerInLine["condiments"]:
-                too_condiment_feedback += 1
-            elif recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] + 1 < customerInLine["condiments"]:
-                less_condiment_feedback += 1
-            elif recipes.ingredients["meat"] - 1 > customerInLine["meat"]:
-                dense_meat_feedback += 1
-            elif recipes.ingredients["meat"] + 1 < customerInLine["meat"]:
-                bad_meat_feedback += 1
-            elif pricing.pricePer > customerInLine["price"]:
-                price_feedback +=1
-            else:
-                inventory.inventoryVar["meat"] -= recipes.ingredients["meat"]
-                inventory.inventoryVar["mustard"] -= recipes.ingredients["mustard"]
-                inventory.inventoryVar["ketchup"] -= recipes.ingredients["ketchup"]
-                inventory.inventoryVar["buns"] -= 1
-                numOfBuy += 1
+        if recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] - 1 > customerInLine["condiments"]:
+            too_condiment_feedback += 1
+        elif recipes.ingredients["ketchup"] + recipes.ingredients["mustard"] + 1 < customerInLine["condiments"]:
+            less_condiment_feedback += 1
+        elif recipes.ingredients["meat"] - 1 > customerInLine["meat"]:
+            dense_meat_feedback += 1
+        elif recipes.ingredients["meat"] + 1 < customerInLine["meat"]:
+            bad_meat_feedback += 1
+        elif pricing.pricePer > customerInLine["price"]:
+            price_feedback +=1
+        else:
+            inventory.inventoryVar["meat"] -= recipes.ingredients["meat"]
+            inventory.inventoryVar["mustard"] -= recipes.ingredients["mustard"]
+            inventory.inventoryVar["ketchup"] -= recipes.ingredients["ketchup"]
+            inventory.inventoryVar["buns"] -= 1
+            numOfBuy += 1
+            continue
         if soldOut == True:
             print("You sold out!")
         profit = float(pricing.pricePer)*numOfBuy
