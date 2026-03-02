@@ -1,9 +1,9 @@
 import shop_money
-ingredients = {"meat":1,
-               "ketchup":1,
-               "mustard":1}
 
 def recipe(ingredients):
+    ingredients = {"meat":1,
+               "ketchup":1,
+               "mustard":1}
     while True:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         ingredient_choice = input("Recipe options: \n 1) meat \n 2) ketchup \n 3) mustard \n 4) Exit recipes \n")

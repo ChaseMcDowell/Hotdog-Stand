@@ -1,5 +1,5 @@
 import recipes
-from inventory import inventoryVar
+import inventory
 import shop_money
 pricePer = float
 pricePer = 3

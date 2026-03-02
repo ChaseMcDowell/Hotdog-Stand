@@ -3,6 +3,7 @@ import backstory
 import time
 
 print("Please fullscreen terminal for the best experience")
-time.sleep(5)
+#time.sleep(5)
 backstory.story_mode()
 menu.startMenu() #does the start menu function
+#remove # line 6 after game finished
