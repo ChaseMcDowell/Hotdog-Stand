@@ -10,11 +10,11 @@ numOfBuy = 0
 customers_list = []
 
 def startDay(inventoryVar,ingredients):
-    inventoryVar = {"money" : shop_money.money,
-             "meat" : shop_money.meat,
-             "buns" : shop_money.buns,
-             "ketchup" : shop_money.ketchup,
-             "mustard" : shop_money.mustard}
+    inventoryVar = {"money" : inventoryVar,
+             "meat" : inventoryVar,
+             "buns" : inventoryVar,
+             "ketchup" : inventoryVar,
+             "mustard" : inventoryVar}
     ingredients = {"meat":1,
                "ketchup":1,
                "mustard":1}    

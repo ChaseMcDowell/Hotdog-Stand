@@ -26,7 +26,7 @@ def recipe(ingredients):
             print("The amount of mustard you are using per hotdog is ",str(ingredients["mustard"]))
             break
         elif ingredient_choice == "1":
-            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality) \n 2) Prime (Middle quality) \n 3) Choice (Lowest quality) \n ")
+            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality,Most Meat) \n 2) Prime (Middle quality,Middle Amount of Meat) \n 3) Choice (Lowest Quality,Least Amount of Meat) \n ")
             if recipe_choice == "1":
                 ingredients["meat"] = 3
             elif recipe_choice == "2":

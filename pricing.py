@@ -4,27 +4,22 @@ import shop_money
 pricePer = float
 pricePer = 3
 
-def price(ingredients):
+def price(ingredients,inventoryVar):
     global pricePer
-    global produce
+    global pricePer
     while True:
-        produce = {"meat" : shop_money.meat,
-             "buns" : shop_money.buns,
-             "ketchup" : shop_money.ketchup,
-             "mustard" : shop_money.mustard}
-        loop_produce_use = {"meat" : shop_money.meat,
-             "buns" : shop_money.buns,
-             "ketchup" : shop_money.ketchup,
-             "mustard" : shop_money.mustard}
-        global pricePer
+        loop_produce_use = {"meat":shop_money.inventoryVar["meat"],
+                            "ketchup":shop_money.inventoryVar["ketchup"],
+                            "mustard":shop_money.inventoryVar["mustard"],
+                            "buns":shop_money.inventoryVar["buns"]}
         costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         numOfMake = 0
         for numOfMake in range(loop_produce_use["buns"] + 1):
-                produce["meat"] -= ingredients["meat"]
-                produce["ketchup"] -= ingredients["ketchup"]
-                produce["mustard"] -= ingredients["mustard"]
-                produce["buns"] -= 1
-                if produce["buns"] >= 0 and produce["ketchup"] >= 0 and produce["meat"] >= 0 and produce["mustard"]:
+                loop_produce_use["meat"] -= ingredients["meat"]
+                loop_produce_use["ketchup"] -= ingredients["ketchup"]
+                loop_produce_use["mustard"] -= ingredients["mustard"]
+                loop_produce_use["buns"] -= 1
+                if loop_produce_use["buns"] >= 0 and loop_produce_use["ketchup"] >= 0 and loop_produce_use["meat"] >= 0 and loop_produce_use["mustard"]:
                     numOfMake += 1
                 else:
                     break
@@ -48,3 +43,5 @@ def price(ingredients):
             break
         else:
             print("Please enter a valid input!")
+
+        return numOfMake

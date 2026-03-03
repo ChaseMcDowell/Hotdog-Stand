@@ -6,14 +6,7 @@ import recipes
 import pricing
 
 def startMenu():#function for start menu
-    inventoryVar = {"money" : shop_money.money,
-             "meat" : shop_money.meat,
-             "buns" : shop_money.buns,
-             "ketchup" : shop_money.ketchup,
-             "mustard" : shop_money.mustard}
-    ingredients = {"meat":1,
-               "ketchup":1,
-               "mustard":1}
+
     while True:#logic for which they select
         if inventoryVar["money"] == 0 and pricing.numOfMake == 0:
             print("You lose")
