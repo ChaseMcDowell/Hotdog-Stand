@@ -1,15 +1,11 @@
-import shop_money
 from customer_class import Customer
-import customer_class
-import recipes
 import pricing
-import inventory
 import random
 
 numOfBuy = 0
 customers_list = []
 
-def startDay(inventoryVar,ingredients):
+def startDay(x,y):
     soldOut = None
     global customers_list
     global profit
@@ -26,30 +22,30 @@ def startDay(inventoryVar,ingredients):
             customerInLine = random.choice(customers_list)
     while True:
         for i in range(random.randint(20,75)):
-            if int(inventoryVar["meat"]) < int(ingredients["meat"]) or int(inventoryVar["mustard"]) < int(ingredients["mustard"]) or int(inventoryVar["ketchup"]) < int(ingredients["ketchup"]) or int(inventoryVar["buns"]) < 1:
+            if int(x["meat"]) < int(y["meat"]) or int(x["mustard"]) < int(y["mustard"]) or int(x["ketchup"]) < int(y["ketchup"]) or int(x["buns"]) < 1:
                 soldOut = True
                 break
-        if ingredients["ketchup"] + ingredients["mustard"] - 1 > customerInLine["condiments"]:
+        if y["ketchup"] + y["mustard"] - 1 > customerInLine["condiments"]:
             too_condiment_feedback += 1
-        elif ingredients["ketchup"] + ingredients["mustard"] + 1 < customerInLine["condiments"]:
+        elif y["ketchup"] + y["mustard"] + 1 < customerInLine["condiments"]:
             less_condiment_feedback += 1
-        elif ingredients["meat"] - 1 > customerInLine["meat"]:
+        elif y["meat"] - 1 > customerInLine["meat"]:
             dense_meat_feedback += 1
-        elif ingredients["meat"] + 1 < customerInLine["meat"]:
+        elif y["meat"] + 1 < customerInLine["meat"]:
             bad_meat_feedback += 1
         elif pricing.pricePer > customerInLine["price"]:
             price_feedback +=1
         else:
-            inventoryVar["meat"] -= ingredients["meat"]
-            inventoryVar["mustard"] -= ingredients["mustard"]
-            inventoryVar["ketchup"] -= ingredients["ketchup"]
-            inventoryVar["buns"] -= 1
+            x["meat"] -= y["meat"]
+            x["mustard"] -= y["mustard"]
+            x["ketchup"] -= y["ketchup"]
+            x["buns"] -= 1
             numOfBuy += 1
             continue
         if soldOut == True:
             print("You sold out!")
         profit = float(pricing.pricePer)*numOfBuy
-        inventoryVar["money"] += profit
+        x["money"] += profit
         print(f"Profit: {profit}")
         print(f"The number of customers that you had was {i}")
         print(f"{too_condiment_feedback} people said you had too many condiments")

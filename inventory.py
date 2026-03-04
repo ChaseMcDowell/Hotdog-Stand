@@ -1,10 +1,10 @@
 import shop_money
 
-def inventoryFunc(inventoryVar):#function for inventory
+def inventoryFunc(e):#function for inventory
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("Inventory:")
-    print("Money: $" + str(inventoryVar["money"]))
-    print("Meat: " + str(inventoryVar["meat"]))
-    print("Buns: " + str(inventoryVar["buns"]))
-    print("Ketchup: " + str(inventoryVar["ketchup"]))
-    print("Mustard: " + str(inventoryVar["mustard"]))
+    print("Money: $" + str(e["money"]))
+    print("Meat: " + str(e["meat"]))
+    print("Buns: " + str(e["buns"]))
+    print("Ketchup: " + str(e["ketchup"]))
+    print("Mustard: " + str(e["mustard"]))

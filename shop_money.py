@@ -1,7 +1,7 @@
 
-def shop(inventoryVar):
+def shop(d):
     while True:#infinite loop so you can purchase many things
-        print(f"Money: {inventoryVar["money"]}")
+        print(f"Money: {d["money"]}")
         shopChoice = input("Purchase: \n 1) meat $1 \n 2) buns $.50 \n 3) ketchup $.25 \n 4) mustard $.25 \n 5) Exit shop \n")
         if shopChoice == "5":#exit
             break
@@ -15,12 +15,12 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["money"] -= int(shopAmount)
-            if inventoryVar["money"] < 0:
-                inventoryVar["money"] += int(shopAmount)
+            d["money"] -= int(shopAmount)
+            if d["money"] < 0:
+                d["money"] += int(shopAmount)
                 print("You cannot afford this!")
             else:
-                inventoryVar["meat"] += int(shopAmount)
+                d["meat"] += int(shopAmount)
         #if they choose buns
         elif shopChoice == "2":
             try:
@@ -31,12 +31,12 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["money"] -= 0.5*int(shopAmount)
-            if inventoryVar["money"] < 0:
-                inventoryVar["money"] += 0.5*int(shopAmount)
+            d["money"] -= 0.5*int(shopAmount)
+            if d["money"] < 0:
+                d["money"] += 0.5*int(shopAmount)
                 print("You cannot afford this!")
             else:
-                inventoryVar["buns"] += int(shopAmount)
+                d["buns"] += int(shopAmount)
         #if they choose ketchup
         elif shopChoice == "3":
             try:
@@ -47,12 +47,12 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["money"] -= 0.25*int(shopAmount)
-            if inventoryVar["money"] < 0:
-                inventoryVar["money"] += 0.25*int(shopAmount)
+            d["money"] -= 0.25*int(shopAmount)
+            if d["money"] < 0:
+                d["money"] += 0.25*int(shopAmount)
                 print("You cannot afford this!")
             else:
-                inventoryVar["ketchup"] += int(shopAmount)
+                d["ketchup"] += int(shopAmount)
         #if they choose mustard
         elif shopChoice == "4":
             try:
@@ -63,12 +63,12 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["money"] -= 0.25*int(shopAmount)
-            if inventoryVar["money"] < 0:
-                inventoryVar["money"] += 0.25*int(shopAmount)
+            d["money"] -= 0.25*int(shopAmount)
+            if d["money"] < 0:
+                d["money"] += 0.25*int(shopAmount)
                 print("You cannot afford this!")
             else:
-                inventoryVar["mustard"] += int(shopAmount)
+                d["mustard"] += int(shopAmount)
         else:#if invalid input
             print("Please enter a valid input. ")
 

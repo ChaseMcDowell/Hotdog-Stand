@@ -1,25 +1,22 @@
-import recipes
-import inventory
-import shop_money
 pricePer = float
 pricePer = 3
 
-def price(ingredients,inventoryVar):
+def price(a,b):
     global pricePer
     global pricePer
     while True:
-        loop_produce_use = {"meat":inventoryVar["meat"],
-                            "ketchup":inventoryVar["ketchup"],
-                            "mustard":inventoryVar["mustard"],
-                            "buns":inventoryVar["buns"]}
-        costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
+        loopUse = {"meat":a["meat"],
+                            "ketchup":a["ketchup"],
+                            "mustard":a["mustard"],
+                            "buns":a["buns"]}
+        costPer = float(b["meat"] + 0.50 + b["ketchup"]*0.25 + b["mustard"]*0.25)
         numOfMake = 0
-        for numOfMake in range(loop_produce_use["buns"] + 1):
-                loop_produce_use["meat"] -= ingredients["meat"]
-                loop_produce_use["ketchup"] -= ingredients["ketchup"]
-                loop_produce_use["mustard"] -= ingredients["mustard"]
-                loop_produce_use["buns"] -= 1
-                if loop_produce_use["buns"] >= 0 and loop_produce_use["ketchup"] >= 0 and loop_produce_use["meat"] >= 0 and loop_produce_use["mustard"]:
+        for numOfMake in range(loopUse["buns"] + 1):
+                loopUse["meat"] -= b["meat"]
+                loopUse["ketchup"] -= b["ketchup"]
+                loopUse["mustard"] -= b["mustard"]
+                loopUse["buns"] -= 1
+                if loopUse["buns"] >= 0 and loopUse["ketchup"] >= 0 and loopUse["meat"] >= 0 and loopUse["mustard"]:
                     numOfMake += 1
                 else:
                     break
