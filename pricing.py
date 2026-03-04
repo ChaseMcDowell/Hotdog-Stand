@@ -8,10 +8,10 @@ def price(ingredients,inventoryVar):
     global pricePer
     global pricePer
     while True:
-        loop_produce_use = {"meat":shop_money.inventoryVar["meat"],
-                            "ketchup":shop_money.inventoryVar["ketchup"],
-                            "mustard":shop_money.inventoryVar["mustard"],
-                            "buns":shop_money.inventoryVar["buns"]}
+        loop_produce_use = {"meat":inventoryVar["meat"],
+                            "ketchup":inventoryVar["ketchup"],
+                            "mustard":inventoryVar["mustard"],
+                            "buns":inventoryVar["buns"]}
         costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
         numOfMake = 0
         for numOfMake in range(loop_produce_use["buns"] + 1):

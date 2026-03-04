@@ -10,14 +10,6 @@ numOfBuy = 0
 customers_list = []
 
 def startDay(inventoryVar,ingredients):
-    inventoryVar = {"money" : inventoryVar,
-             "meat" : inventoryVar,
-             "buns" : inventoryVar,
-             "ketchup" : inventoryVar,
-             "mustard" : inventoryVar}
-    ingredients = {"meat":1,
-               "ketchup":1,
-               "mustard":1}    
     soldOut = None
     global customers_list
     global profit
@@ -34,7 +26,7 @@ def startDay(inventoryVar,ingredients):
             customerInLine = random.choice(customers_list)
     while True:
         for i in range(random.randint(20,75)):
-            if inventoryVar["meat"] < ingredients["meat"] or inventoryVar["mustard"] < ingredients["mustard"] or inventoryVar["ketchup"] < ingredients["ketchup"] or inventoryVar["buns"] < 1:
+            if int(inventoryVar["meat"]) < int(ingredients["meat"]) or int(inventoryVar["mustard"]) < int(ingredients["mustard"]) or int(inventoryVar["ketchup"]) < int(ingredients["ketchup"]) or int(inventoryVar["buns"]) < 1:
                 soldOut = True
                 break
         if ingredients["ketchup"] + ingredients["mustard"] - 1 > customerInLine["condiments"]:

@@ -31,9 +31,9 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["meat"] -= 0.5*int(shopAmount)
-            if inventoryVar["meat"] < 0:
-                inventoryVar["meat"] += 0.5*int(shopAmount)
+            inventoryVar["money"] -= 0.5*int(shopAmount)
+            if inventoryVar["money"] < 0:
+                inventoryVar["money"] += 0.5*int(shopAmount)
                 print("You cannot afford this!")
             else:
                 inventoryVar["buns"] += int(shopAmount)
@@ -47,9 +47,9 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["meat"] -= 0.25*int(shopAmount)
-            if inventoryVar["meat"] < 0:
-                inventoryVar["meat"] += 0.25*int(shopAmount)
+            inventoryVar["money"] -= 0.25*int(shopAmount)
+            if inventoryVar["money"] < 0:
+                inventoryVar["money"] += 0.25*int(shopAmount)
                 print("You cannot afford this!")
             else:
                 inventoryVar["ketchup"] += int(shopAmount)
@@ -63,9 +63,9 @@ def shop(inventoryVar):
             if shopAmount <= 0:
                 print("Please enter a valid input!")
                 continue
-            inventoryVar["meat"] -= 0.25*int(shopAmount)
-            if inventoryVar["meat"] < 0:
-                inventoryVar["meat"] += 0.25*int(shopAmount)
+            inventoryVar["money"] -= 0.25*int(shopAmount)
+            if inventoryVar["money"] < 0:
+                inventoryVar["money"] += 0.25*int(shopAmount)
                 print("You cannot afford this!")
             else:
                 inventoryVar["mustard"] += int(shopAmount)
