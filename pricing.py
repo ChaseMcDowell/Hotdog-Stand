@@ -2,12 +2,12 @@ pricePer = float
 pricePer = 3
 
 def makeHotDog(inven,ingrie):
-    numOfMake = 0
-    for numOfMake in range(loopUse["buns"] + 1):
-        loopUse = {"meat":inven["meat"],
+    loopUse = {"meat":inven["meat"],
                     "ketchup":inven["ketchup"],
                     "mustard":inven["mustard"],
                     "buns":inven["buns"]}
+    numOfMake = 0
+    for numOfMake in range(loopUse["buns"] + 1):
         loopUse["meat"] -= ingrie["meat"]
         loopUse["ketchup"] -= ingrie["ketchup"]
         loopUse["mustard"] -= ingrie["mustard"]
@@ -44,5 +44,6 @@ def price(a,b):
             break
         else:
             print("Please enter a valid input!")
+
 
         return numOfMake
