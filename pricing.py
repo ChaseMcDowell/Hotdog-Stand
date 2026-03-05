@@ -1,25 +1,29 @@
 pricePer = float
 pricePer = 3
 
+def makeHotDog(inven,ingrie):
+    numOfMake = 0
+    for numOfMake in range(loopUse["buns"] + 1):
+        loopUse = {"meat":inven["meat"],
+                    "ketchup":inven["ketchup"],
+                    "mustard":inven["mustard"],
+                    "buns":inven["buns"]}
+        loopUse["meat"] -= ingrie["meat"]
+        loopUse["ketchup"] -= ingrie["ketchup"]
+        loopUse["mustard"] -= ingrie["mustard"]
+        loopUse["buns"] -= 1
+            if loopUse["buns"] >= 0 and loopUse["ketchup"] >= 0 and loopUse["meat"] >= 0 and loopUse["mustard"]:
+                numOfMake += 1
+            else:
+                return numOfMake
+                break
+
+
 def price(a,b):
     global pricePer
-    global pricePer
     while True:
-        loopUse = {"meat":a["meat"],
-                            "ketchup":a["ketchup"],
-                            "mustard":a["mustard"],
-                            "buns":a["buns"]}
+        numOfMake = makeHotDog(inventoryVar,ingredients)
         costPer = float(b["meat"] + 0.50 + b["ketchup"]*0.25 + b["mustard"]*0.25)
-        numOfMake = 0
-        for numOfMake in range(loopUse["buns"] + 1):
-                loopUse["meat"] -= b["meat"]
-                loopUse["ketchup"] -= b["ketchup"]
-                loopUse["mustard"] -= b["mustard"]
-                loopUse["buns"] -= 1
-                if loopUse["buns"] >= 0 and loopUse["ketchup"] >= 0 and loopUse["meat"] >= 0 and loopUse["mustard"]:
-                    numOfMake += 1
-                else:
-                    break
         profitPer = float(pricePer-costPer)
         netProfit = numOfMake * profitPer
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")

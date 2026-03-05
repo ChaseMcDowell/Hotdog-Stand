@@ -22,21 +22,7 @@ print("Please fullscreen terminal for the best experience")
 #time.sleep(5)
 backstory.story_mode()
 while True:#logic for which they select
-    loop_produce_use = {"meat":inventoryVar["meat"],
-                            "ketchup":inventoryVar["ketchup"],
-                            "mustard":inventoryVar["mustard"],
-                            "buns":inventoryVar["buns"]}
-    costPer = float(ingredients["meat"] + 0.50 + ingredients["ketchup"]*0.25 + ingredients["mustard"]*0.25)
-    numOfMake = 0
-    for numOfMake in range(loop_produce_use["buns"] + 1):
-                loop_produce_use["meat"] -= ingredients["meat"]
-                loop_produce_use["ketchup"] -= ingredients["ketchup"]
-                loop_produce_use["mustard"] -= ingredients["mustard"]
-                loop_produce_use["buns"] -= 1
-                if loop_produce_use["buns"] >= 0 and loop_produce_use["ketchup"] >= 0 and loop_produce_use["meat"] >= 0 and loop_produce_use["mustard"]:
-                    numOfMake += 1
-                else:
-                    break
+    numOfMake = pricing.makeHotDog(inventoryVar,ingredients)
     if inventoryVar["money"] == 0 and numOfMake == 0:
         print("You lose")
         break
