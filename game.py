@@ -7,8 +7,6 @@ import recipes
 import price
 from price import makeHotDog
 
-numOfMake = 0
-
 inventoryVar = {"money" : 100,
             "meat" : 0,
             "buns" : 0,
@@ -24,6 +22,7 @@ print("Please fullscreen terminal for the best experience")
 backstory.story_mode()
 while True:#logic for which they select
     numOfMake = makeHotDog(inventoryVar,ingredients)
+    print(numOfMake) #use for a little bit
     if inventoryVar["money"] == 0 and numOfMake == 0:
         print("You lose")
         break

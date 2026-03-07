@@ -1,6 +1,7 @@
-import shop_money
-
 def recipe(c):
+    global rMeat
+    global rKet
+    global rMus
     c = {"meat":1,
                "ketchup":1,
                "mustard":1}
@@ -14,14 +15,14 @@ def recipe(c):
         if c["meat"] == 1:
             qual = "choice"
         if qual == "choice":
-            meat_use = 1
+            rMeat = 1
         if qual == "wagyu":
-            meat_use = 3
+            rMeat = 3
         if qual == "prime":
-            meat_use = 2
+            rMeat = 2
         if ingredient_choice == "4":
             print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-            print("The quality of meat you are using per hotdog is", qual + ". This will use ",meat_use," meat per hotdog.")
+            print("The quality of meat you are using per hotdog is", qual + ". This will use ",rMeat," meat per hotdog.")
             print("The amount of ketchup you are using per hotdog is ",str(c["ketchup"]))
             print("The amount of mustard you are using per hotdog is ",str(c["mustard"]))
             break
@@ -38,25 +39,31 @@ def recipe(c):
                 print("Please enter valid input.")
                 continue
         elif ingredient_choice == "2":
-            recipe_choice = input("How much ketchup would you like to use. (1,2,3) ")
-            if recipe_choice == "1":
+            ket_recipe_choice = input("How much ketchup would you like to use. (1,2,3) ")
+            if ket_recipe_choice == "1":
                 c["ketchup"] = 1
-            elif recipe_choice == "2":
+                rKet = 1
+            elif ket_recipe_choice == "2":
                 c["ketchup"] = 2
-            elif recipe_choice == "3":
+                rKet = 2
+            elif ket_recipe_choice == "3":
                 c["ketchup"] = 3
+                rKet =3
             else:
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")
                 continue
         elif ingredient_choice == "3":
-            recipe_choice = input("How much mustard would you like to use. (1,2,3) ")
-            if recipe_choice == "1":
+            mus_recipe_choice = input("How much mustard would you like to use. (1,2,3) ")
+            if mus_recipe_choice == "1":
                 c["mustard"] = 1
-            elif recipe_choice == "2":
+                rMus = 1
+            elif mus_recipe_choice == "2":
                 c["mustard"] = 2
-            elif recipe_choice == "3":
+                rMus = 2
+            elif mus_recipe_choice == "3":
                 c["mustard"] = 3
+                rMus = 3
             else:
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")
