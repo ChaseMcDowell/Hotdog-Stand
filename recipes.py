@@ -1,7 +1,7 @@
+
+
+
 def recipe(c):
-    global rMeat
-    global rKet
-    global rMus
     c = {"meat":1,
                "ketchup":1,
                "mustard":1}
@@ -22,7 +22,7 @@ def recipe(c):
             rMeat = 2
         if ingredient_choice == "4":
             print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-            print("The quality of meat you are using per hotdog is", qual + ". This will use ",rMeat," meat per hotdog.")
+            print("The quality of meat you are using per hotdog is", qual + ". This will use",rMeat,"meat per hotdog.")
             print("The amount of ketchup you are using per hotdog is ",str(c["ketchup"]))
             print("The amount of mustard you are using per hotdog is ",str(c["mustard"]))
             break
@@ -72,3 +72,4 @@ def recipe(c):
             print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("Please enter a valid input. ")
             continue
+    return(c)

@@ -1,3 +1,5 @@
+
+
 def story_mode():
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("Welcome to your hotdog stand. ")

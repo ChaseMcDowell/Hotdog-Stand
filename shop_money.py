@@ -1,4 +1,5 @@
 
+
 def shop(d):
     while True:#infinite loop so you can purchase many things
         print(f"Money: {d["money"]}")
