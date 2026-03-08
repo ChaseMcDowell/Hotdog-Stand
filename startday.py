@@ -1,13 +1,9 @@
 from customer_class import Customer
-import price
 import random
 
-customers_list = []
-
-def startDay(x,y):
+def startDay(x,y,z,z1):
     numOfBuy = 0
     soldOut = None
-    global customers_list
     global profit
     too_condiment_feedback = 0
     less_condiment_feedback =0
@@ -16,10 +12,11 @@ def startDay(x,y):
     price_feedback = 0
     while True:
         for i in range(random.randint(20,75)):
+            customers_list = []
             customer = Customer()
             customers_list.append(customer.get_customer_attributes())
             customerInLine = random.choice(customers_list)
-            if int(x["meat"]) < int(y["meat"]) or int(x["mustard"]) < int(y["mustard"]) or int(x["ketchup"]) < int(y["ketchup"]) or int(x["buns"]) < 1:
+            if z1 < 1:
                 soldOut = True
                 if soldOut == True:
                     print("You sold out!")
@@ -36,7 +33,7 @@ def startDay(x,y):
             elif y["meat"] < customerInLine["meat"]:
                 bad_meat_feedback += 1
                 continue
-            elif price.pricePer > customerInLine["price"]:
+            elif z > customerInLine["price"]:
                 price_feedback +=1
                 continue
             else:
@@ -46,7 +43,7 @@ def startDay(x,y):
                 x["buns"] -= 1
                 numOfBuy += 1
                 continue
-        profit = float(price.pricePer)*numOfBuy
+        profit = float(z)*numOfBuy
         x["money"] += profit
         print(f"Profit: {profit}")
         print(f"The number of customers that you had was {i}")
@@ -55,3 +52,4 @@ def startDay(x,y):
         print(f"{dense_meat_feedback} people said you had too dense/high quality ")
         print(f"{price_feedback} people said you charged too much")
         break
+    return(x,y,z1)

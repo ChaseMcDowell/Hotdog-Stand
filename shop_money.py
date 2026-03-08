@@ -72,6 +72,7 @@ def shop(d):
                 d["mustard"] += int(shopAmount)
         else:#if invalid input
             print("Please enter a valid input. ")
+    return(d)
 
 
 # money system don't run the file!!

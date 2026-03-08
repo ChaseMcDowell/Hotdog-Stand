@@ -1,12 +1,5 @@
 
 
-def makeHotDog(inven,ingrie):
-    maxMeat = inven["meat"] // ingrie["meat"]
-    maxKetchup = inven["ketchup"] // ingrie["ketchup"]
-    maxMustard = inven["mustard"] // ingrie["mustard"]
-    maxBuns = inven["buns"]
-    return min(maxMeat,maxKetchup,maxMustard,maxBuns)
-
 def price(b, z, x):
     while True:
         costPer = float(b["meat"] + 0.50 + b["ketchup"]*0.25 + b["mustard"]*0.25)
@@ -34,3 +27,4 @@ def price(b, z, x):
             break
         else:
             print("Please enter a valid input!")
+    return(x)

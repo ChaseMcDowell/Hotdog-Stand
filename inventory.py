@@ -1,4 +1,3 @@
-import shop_money
 
 def inventoryFunc(e):#function for inventory
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")

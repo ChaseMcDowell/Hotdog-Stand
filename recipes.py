@@ -2,9 +2,6 @@
 
 
 def recipe(c):
-    c = {"meat":1,
-               "ketchup":1,
-               "mustard":1}
     while True:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         ingredient_choice = input("Recipe options: \n 1) meat \n 2) ketchup \n 3) mustard \n 4) Exit recipes \n")
@@ -27,7 +24,7 @@ def recipe(c):
             print("The amount of mustard you are using per hotdog is ",str(c["mustard"]))
             break
         elif ingredient_choice == "1":
-            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality,Most Meat) \n 2) Prime (Middle quality,Middle Amount of Meat) \n 3) Choice (Lowest Quality,Least Amount of Meat) \n ")
+            recipe_choice = input("What quality of meat would you like to use meat would you like to use.\n 1) Wagyu (Best quality, Most Meat) \n 2) Prime (Middle quality, Middle Amount of Meat) \n 3) Choice (Lowest Quality, Least Amount of Meat) \n ")
             if recipe_choice == "1":
                 c["meat"] = 3
             elif recipe_choice == "2":
@@ -42,13 +39,10 @@ def recipe(c):
             ket_recipe_choice = input("How much ketchup would you like to use. (1,2,3) ")
             if ket_recipe_choice == "1":
                 c["ketchup"] = 1
-                rKet = 1
             elif ket_recipe_choice == "2":
                 c["ketchup"] = 2
-                rKet = 2
             elif ket_recipe_choice == "3":
                 c["ketchup"] = 3
-                rKet =3
             else:
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")
@@ -57,13 +51,10 @@ def recipe(c):
             mus_recipe_choice = input("How much mustard would you like to use. (1,2,3) ")
             if mus_recipe_choice == "1":
                 c["mustard"] = 1
-                rMus = 1
             elif mus_recipe_choice == "2":
                 c["mustard"] = 2
-                rMus = 2
             elif mus_recipe_choice == "3":
                 c["mustard"] = 3
-                rMus = 3
             else:
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 print("Please enter valid input.")

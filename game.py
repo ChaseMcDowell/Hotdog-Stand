@@ -5,9 +5,7 @@ import inventory
 import startday
 import recipes
 import price
-from price import makeHotDog
-
-pricePer = 3.0
+from makeHotDog import makeHotDog
 
 inventoryVar = {"money" : 100,
             "meat" : 0,
@@ -19,18 +17,22 @@ ingredients = {"meat":1,
             "ketchup":1,
             "mustard":1}
 
+pricePer = 3.0
+
+numOfMake = 0
+
 print("Please fullscreen terminal for the best experience")
-#time.sleep(5)
+time.sleep(5)
 backstory.story_mode()
 while True:#logic for which they select
-    numOfMake = makeHotDog(inventoryVar,ingredients)
+    numOfMake = makeHotDog(inventoryVar,ingredients,make=numOfMake)
     if inventoryVar["money"] == 0 and numOfMake == 0:
         print("You lose")
         break
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     gameChoice = input("What would you like to do?: \n 1.) Start Day \n 2.) Inventory \n 3.) Shop \n 4.) Recipes \n 5.) Pricing \n")
     if gameChoice == "1":
-        startday.startDay(inventoryVar,ingredients)
+        startday.startDay(inventoryVar,ingredients,pricePer,numOfMake)
     elif gameChoice == "2":
         inventory.inventoryFunc(inventoryVar)
     elif gameChoice == "3":
@@ -38,7 +40,7 @@ while True:#logic for which they select
     elif gameChoice == "4":
         recipes.recipe(ingredients)
     elif gameChoice == "5":
-        numOfMake = price.price(ingredients,numOfMake,pricePer)
+        price.price(ingredients,numOfMake,pricePer)
     elif gameChoice != "1" or gameChoice != "2" or gameChoice != "3" or gameChoice != "4" or gameChoice != "5":
         print("Please enter valid input!")
         continue
