@@ -9,7 +9,7 @@ def price(b, z, x):
         print(f"Cost per hotdog: {costPer}")
         print(f"Price per hotdog: {x}")
         print(f"Total profit per hotdog: {profitPer}")
-        print(f"With your current recipe and inventory, you can produce {z} hotdog(s)")
+        print(f"With your current recipe and inventory, you can produce {z} hotdog(s) to profit ${netProfit}")
         priceChoice = input("What would you like to do? \n 1.) Change Price \n 2.) Go Back to Menu \n")
         if priceChoice == "1":
             try:

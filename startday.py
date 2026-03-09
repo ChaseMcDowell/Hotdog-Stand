@@ -43,7 +43,7 @@ def startDay(x,y,z,z1):
                 x["buns"] -= 1
                 numOfBuy += 1
                 continue
-        profit = float(z)*numOfBuy
+        profit = z*numOfBuy
         x["money"] += profit
         print(f"Profit: {profit}")
         print(f"The number of customers that you had was {i}")

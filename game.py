@@ -8,10 +8,10 @@ import price
 from makeHotDog import makeHotDog
 
 inventoryVar = {"money" : 100,
-            "meat" : 0,
-            "buns" : 0,
-            "ketchup" : 0,
-            "mustard" : 0}
+                "meat" : 0,
+                "buns" : 0,
+                "ketchup" : 0,
+                "mustard" : 0}
 
 ingredients = {"meat":1,
             "ketchup":1,
@@ -41,6 +41,7 @@ while True:#logic for which they select
         recipes.recipe(ingredients)
     elif gameChoice == "5":
         price.price(ingredients,numOfMake,pricePer)
+        print(pricePer)
     elif gameChoice != "1" or gameChoice != "2" or gameChoice != "3" or gameChoice != "4" or gameChoice != "5":
         print("Please enter valid input!")
         continue
